@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">My Pharmacies</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Farmàcies de la Ribera</string>
+    <string name="nav_header_subtitle">IES Jaume II el Just</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_poblacions">Poblacions</string>
+    <string name="menu_farmacies_guardia">Farmàcies guàdia Carcaixent</string>
+    <string name="menu_gestio_poblacions">Poblacions</string>
+    <string name="menu_gestio_farmacies">Farmacies</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="menu_farmacies">Farmacies</string>
+    <string name="telefon">Telèfon:</string>
+    <string name="adresa">Adreça:</string>
+    <string name="nom_farmacia">Nom farmàcia:</string>
+    <string name="menu_info_farmacia">Informació farmacia</string>
+</resources>

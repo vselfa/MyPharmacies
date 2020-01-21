@@ -1,5 +1,4 @@
 package com.example.mypharmacies.Control;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -10,16 +9,13 @@ import java.util.ArrayList;
 public class poblacionsDAO  {
     private MySQLiteHelper connexion;     private SQLiteDatabase db;
     ArrayList<Poblacio> llistaPoblacions; ArrayList<String> nomPoblacions;
-
     public poblacionsDAO(Context context) {
         connexion = new MySQLiteHelper( context );
         db = connexion.getWritableDatabase();
     }
-
     public ArrayList<String> getNomPoblacions () {
         String sql =  "SELECT * FROM Poblacions" ;
-        // Llegim les dades
-        Cursor c = db.rawQuery(sql, null);
+        Cursor c = db.rawQuery(sql, null);         // Llegim les dades
         nomPoblacions = new ArrayList<>();
         if (c.moveToFirst()) {
             do {  nomPoblacions.add( c.getString(1));
@@ -27,11 +23,9 @@ public class poblacionsDAO  {
         }
         return nomPoblacions;
     }
-
     public ArrayList<Poblacio> getPoblacions () {
         String sql =  "SELECT * FROM Poblacions" ;
-        // Llegim les dades
-        Cursor c = db.rawQuery(sql, null);
+        Cursor c = db.rawQuery(sql, null);         // Llegim les dades
         llistaPoblacions = new ArrayList<>();
         if (c.moveToFirst()) {
             do {
@@ -53,21 +47,12 @@ public class poblacionsDAO  {
         if (answer <= 0)return false;
         else return true;
     }
-
     public boolean eliminarPoblacio (String codiPoble) {
-        //Option 1:  sqlExec().-´String sql = "DELETE FROM ..."; db.execSQL(sql);
-        //Option 2: método delete()
         int answer = db.delete("Poblacions", "codi= '" + codiPoble +"'", null);
         if (answer <= 0)return false;
         else return true;
     }
-
-
-
-
     public boolean actualitzarPoblacio (Poblacio poble) {
-        //Option 1:  sqlExec().- string sql = "UPDATE .... "; db.execSQL(sql);
-        //Option 2: method update()
         ContentValues newRecord = new ContentValues();
         newRecord.put("codi", poble.getCodi()); newRecord.put("poblacio", poble.getPoblacio());
         newRecord.put("lat", poble.getLat());   newRecord.put("lon", poble.getLon());
